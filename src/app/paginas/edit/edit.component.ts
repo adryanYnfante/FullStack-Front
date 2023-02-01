@@ -47,31 +47,32 @@ export class EditComponent implements OnInit {
   getDatos(){
     this.question=this.idanswer;
   }
-  
+
 
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
   }
 
-  getData(){    
+  getData(){
     this.userLogged.subscribe(value=>{
     })
-    
+
   }
 
 
   editQuestion(question: QuestionI): void{
+    console.log('this.question :>> ', this.question);
      question.id=this.idanswer.id;
     question.userId=this.idanswer.userId;
 
     this.services.editQuestion(question).subscribe((v)=>{
-     
+
     });
 
     this.modalService.dismissAll();
     this.messageService.add({
       severity: 'success',
-      summary: 'Se ha actualizado la pregunta',          
+      summary: 'Se ha actualizado la pregunta',
      });
     setTimeout(() => {
       window.location.reload();
@@ -79,21 +80,21 @@ export class EditComponent implements OnInit {
   }
 
   saveQuestion(question: QuestionI): void {
-    if(question.type && question.category){    
+    if(question.type && question.category){
      this.modalService.dismissAll();
      this.services.saveQuestion(question).subscribe({
-       next: (v) => {       
+       next: (v) => {
          if (v) {
            this.messageService.add({
              severity: 'success',
              summary: 'Se ha agregado la pregunta',
-             
+
             });
             setTimeout(() => {
             window.location.reload();
           }, 2000);
         } else {
-          
+
         }
       },
       error: (e) =>
@@ -103,7 +104,7 @@ export class EditComponent implements OnInit {
       complete: () => console.info('complete'),
     });
   }else{
-   
+
     this.messageService.add({
       severity: 'error',
       summary: 'Rectifique los datos',
