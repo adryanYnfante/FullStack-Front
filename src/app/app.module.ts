@@ -39,7 +39,6 @@ import { EditComponent } from './paginas/edit/edit.component';
     QuestionComponent,
     RequestionComponent,
     EditComponent
-
   ],
   imports: [
     BrowserModule,

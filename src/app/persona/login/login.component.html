@@ -35,24 +35,25 @@
 
                 <button [disabled]="form.invalid" (click)="ingresar()" pButton pRipple type="button" label="Iniciar" class="p-button-outlined p-button-secondary" style="margin-bottom: 10px;"></button>
                 <div class="formGroup">
-                  <span class="or"><span class="orInner">Or</span></span>
+                  <span class="or"><span class="orInner">O</span></span>
                 </div>
-                <!-- Calling GoogleAuth Api from AuthService -->
+
                 <div class="formGroup">
                   <button type="button" class="btn googleBtn" (click)="ingresarGoogle()">
                     <i class="fab fa-google-plus-g"></i>
-                    Log in with Google
+                    Iniciar sesión con Google
                   </button>
                 </div>
 
                 <br>
-
-
+                <div class="recuperarContraseñ">
+                  <button type="button" class="btn-primary" (click)="showModalDialog()">
+                    <i class="fab fa-google-plus-g"></i>
+                    Recuperar Contraseña
+                  </button>
+                </div>
                 <br>
                 <p>Aun no tienes cuenta? <a href="/registro" >Registrate</a></p>
-
-
-
             </form>
 
         </div>
