@@ -30,8 +30,6 @@ import {DialogModule} from 'primeng/dialog';
     MenuModule,
     DividerModule,
     DialogModule
-    
-    
   ]
 })
 export class PrimeNGModule { }

@@ -10,14 +10,13 @@ import { QuestionService } from 'src/app/Service/question.service';
   styleUrls: ['./requestion.component.css']
 })
 export class RequestionComponent implements OnInit {
-  
+
   question:QuestionI | undefined;
   answers: AnswerI[] | undefined;
   answersNew: AnswerI[]=[];
   currentAnswer:number=0;
 
   questions: QuestionI[] | undefined;
- 
   page: number = 0;
 
   constructor(
@@ -35,14 +34,14 @@ export class RequestionComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.getQuestions(`${id}`);
     this.get2();
-    
+
   }
-  
+
   get2(){
     let id = this.route.snapshot.paramMap.get('id');
-    
 
-    this.service.getAnswer(id).subscribe((data) => {  
+
+    this.service.getAnswer(id).subscribe((data) => {
           this.answers = data.answers;
     });
   }
