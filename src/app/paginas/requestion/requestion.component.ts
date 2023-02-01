@@ -48,7 +48,7 @@ export class RequestionComponent implements OnInit {
   }
 
   getQuestions(id:string):void{
-    this.questionService.getQuestion(id).subscribe(data=>{
+    this.questionService.getQuestion(id).subscribe(data=>{      
       this.question=data;
       this.answers = data.answers;
     })
