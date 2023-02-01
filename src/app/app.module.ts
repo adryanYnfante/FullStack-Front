@@ -22,7 +22,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
@@ -33,12 +32,12 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     LoginComponent,
     PreguntasComponent,
     NavbarComponent,
-    RegistroComponent, 
+    RegistroComponent,
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
     EditComponent
-       
+
   ],
   imports: [
     BrowserModule,
@@ -51,11 +50,11 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     NgbModule,
     FormsModule,
     ToastrModule.forRoot(),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth())
-    
-   
-    
+
+
+
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
