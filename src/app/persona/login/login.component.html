@@ -62,6 +62,10 @@
     <button type="button" (click)="preguntasHome()" pButton pRipple label="Preguntas" class="p-button-danger mb-2"><i class="pi pi-user-edit" style="margin-top: 5px;"></i></button>
 </div>
 
+<div class="forgotPassword">
+  <a (click)="showModalDialog()"> Forgot Password? </a>
+</div>
+
 
 
 <p-dialog header="Recuperar Contraseña" [(visible)]="displayModal" [modal]="true" [style]="{width: '20vw'}"

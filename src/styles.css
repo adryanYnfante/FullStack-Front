@@ -22,3 +22,20 @@
 .googleBtn {
   background: #4dd5fe;
 }
+
+.forgotPassword {
+  text-align: center;
+  margin: -12px 0 15px 0;
+  float: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.forgotPassword span {
+  color: #4dd5fe;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  padding-top: 20px;
+}
