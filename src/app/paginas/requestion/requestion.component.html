@@ -30,8 +30,12 @@
           </div>
         </div>
       </div>
-      <div class="col-5">
-        <div class="accordion" id="accordionExample"  *ngFor="let questions of answers">
+      <div 
+      class="col-5"
+      >
+      <cdk-virtual-scroll-viewport itemSize="50" minBufferPx="1" maxBufferPx="2" style="height:100vh;width:auto;">
+        <div 
+        class="accordion" id="accordionExample"  *cdkVirtualFor="let questions of answers">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -52,6 +56,8 @@
             </div>
           </div>
         </div>
+      </cdk-virtual-scroll-viewport>
+       
       </div>
       
     </div>

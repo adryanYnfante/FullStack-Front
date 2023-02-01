@@ -15,7 +15,8 @@ export class RequestionComponent implements OnInit {
   answers: AnswerI[] | undefined;
   answersNew: AnswerI[]=[];
   currentAnswer:number=0;
-
+  distance =2;
+  throttle=0;
   questions: QuestionI[] | undefined;
  
   page: number = 0;
@@ -63,7 +64,7 @@ export class RequestionComponent implements OnInit {
   }
 
   onScroll() {
-
+      
   }
 
 }
