@@ -30,12 +30,13 @@ import { EditComponent } from './paginas/edit/edit.component';
     LoginComponent,
     PreguntasComponent,
     NavbarComponent,
-    RegistroComponent, 
+    RegistroComponent,
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
-       
+    EditComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -48,9 +49,9 @@ import { EditComponent } from './paginas/edit/edit.component';
     NgbModule,
     FormsModule,
     ToastrModule.forRoot()
-    
-   
-    
+
+
+
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

@@ -33,6 +33,7 @@ export class PreguntasComponent implements OnInit {
   getQuestions(): void {
     this.userLogged.subscribe(value =>{
         this.uid=value?.uid
+       
     });
     this.service.getPage(this.page).subscribe((data) => {
         this.questions = data;
@@ -68,11 +69,11 @@ export class PreguntasComponent implements OnInit {
   }
 
   traerdatos() {
-    this.userLogged.subscribe((value) => {     
+    this.userLogged.subscribe((value) => {
       if (value?.email == undefined) {
-        this.disabled = true;       
+        this.disabled = true;
       } else {
-        this.disabled = false;     
+        this.disabled = false;
       }
     });
   }
