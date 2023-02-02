@@ -38,6 +38,10 @@
                 aria-expanded="true" aria-controls="collapseOne">
                 <h5 class="text-center">Respuesta: </h5>
                 <p-rating [cancel]="false" [(ngModel)]="questions.position" [disabled]="true"></p-rating>
+                <!-- Botón para editar la respuesta -->
+                <div style="text-align: center; margin-left: 20px;">
+                  <app-edit [idanswer]="question"></app-edit>
+                </div>
                 <!-- Respuesta -->
               </button>
             </h2>
