@@ -39,3 +39,12 @@
   display: inline-block;
   padding-top: 20px;
 }
+
+.scroll {
+  /* height: 400px !important; */
+  /* scroll-behavior: smooth;
+  overflow-y: scroll; */
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -23,7 +23,9 @@ import { EditComponent } from './paginas/edit/edit.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
-
+import { MatCardModule } from '@angular/material/card';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -49,6 +51,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     HttpClientModule,
     NgbModule,
     FormsModule,
+    MatCardModule,
+   InfiniteScrollModule,
+   ScrollingModule,
     ToastrModule.forRoot(),
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAuth(() => getAuth())
