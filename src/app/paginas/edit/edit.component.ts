@@ -73,9 +73,9 @@ export class EditComponent implements OnInit {
       severity: 'success',
       summary: 'Se ha actualizado la pregunta',
      });
-    // setTimeout(() => {
-    //   window.location.reload();
-    // }, 2000);
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   }
 
   saveQuestion(question: QuestionI): void {
