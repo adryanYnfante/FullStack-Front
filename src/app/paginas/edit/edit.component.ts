@@ -61,8 +61,8 @@ export class EditComponent implements OnInit {
 
 
   editQuestion(question: QuestionI): void{
-     question.id=this.idanswer.id;
-    question.userId=this.idanswer.userId;
+    question.id = this.idanswer.id;
+    question.userId = this.idanswer.userId;
 
     this.services.editQuestion(question).subscribe((v)=>{
 

@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistroComponent } from './persona/registro/registro.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AnswerComponent } from './paginas/answer/answer.component';
 import { QuestionComponent } from './paginas/question/question.component';
@@ -23,8 +23,6 @@ import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
-
-
 
 @NgModule({
   declarations: [
@@ -52,8 +50,6 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     ToastrModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth())
-
-
 
   ],
   providers: [HttpClientModule],
