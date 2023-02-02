@@ -21,9 +21,9 @@ import { ToastModule } from 'primeng/toast';
 import { ToastrModule } from 'ngx-toastr';
 import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
-
-
-
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { MatCardModule } from '@angular/material/card';
+import {ScrollingModule} from '@angular/cdk/scrolling'
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,9 +48,10 @@ import { EditComponent } from './paginas/edit/edit.component';
     HttpClientModule,
     NgbModule,
     FormsModule,
-    ToastrModule.forRoot()
-
-
+    ToastrModule.forRoot(),
+    InfiniteScrollModule,
+    MatCardModule,
+    ScrollingModule
 
   ],
   providers: [HttpClientModule],

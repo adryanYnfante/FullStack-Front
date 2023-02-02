@@ -58,7 +58,7 @@ export class AnswerComponent implements OnInit {
           this.modalService.dismissAll();
           this.messageService.add({
             severity: 'success',
-            summary: 'Se ha agregado la respuesta',
+            summary: 'Se ha agregado la respuesta :)',
 
            });
            setTimeout(() => {
