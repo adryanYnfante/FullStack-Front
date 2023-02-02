@@ -59,4 +59,11 @@ export class QuestionService {
     let direction = this.url + 'update';
     return this.http.post<any>(direction, question);
   }
+
+  editAnswer(Answer: AnswerI): Observable<any> {
+    let direction = this.url + 'updateA';
+    return this.http.post<any>(direction, Answer);
+  }
+
+  
 }

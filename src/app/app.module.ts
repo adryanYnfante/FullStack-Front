@@ -23,7 +23,8 @@ import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { MatCardModule } from '@angular/material/card';
-import {ScrollingModule} from '@angular/cdk/scrolling'
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling'
     QuestionComponent,
     RequestionComponent,
     EditComponent,
+    EditAnswerComponent,
 
 
   ],

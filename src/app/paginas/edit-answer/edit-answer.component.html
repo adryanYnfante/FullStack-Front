@@ -1,4 +1,3 @@
-
 <p-toast></p-toast>
 <ng-template #content let-modal>
     <div class="modal-header">
@@ -11,17 +10,15 @@
             <b>Editar tu pregunta</b>
           </div>
           <div class="card-body p-4">
-            <input id="type" class="form-control m-2 font2" type="text" placeholder="Tipo de pregunta" name="type" [(ngModel)]="question.type" required value="idanswer.id"/>
-            <input id="category" class="form-control m-2 font2" type="text" placeholder="Categorio de la Pregunta" name="category" [(ngModel)]="question.category" required />
 
               <div class="form-floating font2" style="margin-top: 20px;">
-                <textarea class="form-control m-2 font2" placeholder="Leave a comment here" id="question" style="height: 150px" [(ngModel)]="question.question"></textarea>
+                <textarea class="form-control m-2 font2" placeholder="Leave a comment here" id="question" style="height: 150px" [(ngModel)]="answers.answer"></textarea>
                 <label for="floatingTextarea">Pregunta</label>
 
 
                 <br>
               </div>
-              <button pButton (click)="editQuestion(question)" pRipple type="button" label="Actualizar Pregunta" class="p-button-outlined p-button-info"></button>
+              <button pButton (click)="(answers)" pRipple type="button" label="Actualizar respuesta" class="p-button-outlined p-button-info"></button>
 
             <hr>
           </div>

@@ -41,20 +41,27 @@
 
         >
         <div>
-        <div class="accordion" id="accordionExample"  *ngFor="let questions of answersNew">
+        <div class="accordion" id="accordionExample"  *ngFor="let As of answersNew">
+          <div  *ngIf="As.userId==uid">
+            <div style="text-align: center;">
+              <app-edit-answer [idanswer]="answers">editar</app-edit-answer>
+          </div>
+          </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                 <h5 class="text-center">Respuesta: </h5>
-                <h5 class="text-center"> {{questions.position}}: </h5>
-                <p-rating [cancel]="false" [(ngModel)]="questions.position" [disabled]="true"></p-rating>
+                <h5 class="text-center"> {{As.position}}: </h5>
+                <p-rating [cancel]="false" [(ngModel)]="As.position" [disabled]="true"></p-rating>
 
 
                 <!-- Respuesta -->
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <p>{{ questions.answer }}</p>
+
+              <p>{{ As.answer }}</p>
+
               <div class="accordion-body">
                 <strong></strong>
 

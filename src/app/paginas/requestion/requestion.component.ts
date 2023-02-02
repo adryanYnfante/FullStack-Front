@@ -10,7 +10,7 @@ import { QuestionService } from 'src/app/Service/question.service';
   styleUrls: ['./requestion.component.css']
 })
 export class RequestionComponent implements OnInit {
-
+ 
   question:QuestionI | undefined;
   answers: AnswerI[] | undefined | any[] ;
   answersNew: AnswerI[]| undefined | any[] ;
@@ -20,6 +20,7 @@ export class RequestionComponent implements OnInit {
   throttle :number=0;
   distance: number=1;
   page: number = 0;
+  uid: any;
 
   constructor(
     private route:ActivatedRoute,
