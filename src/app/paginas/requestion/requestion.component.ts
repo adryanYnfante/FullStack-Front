@@ -62,7 +62,7 @@ export class RequestionComponent implements OnInit {
   }
 
   onScroll() {
-
-  }
+    console.log("Hola");
+  }
 
 }

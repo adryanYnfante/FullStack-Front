@@ -22,6 +22,7 @@ import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
 //import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 //import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
@@ -50,6 +51,7 @@ import { environment } from '../environments/environment';
     NgbModule,
     FormsModule,
     ToastrModule.forRoot(),
+    ScrollingModule
     //provideFirebaseApp(() => initializeApp(environment.firebase)),
     //provideAuth(() => getAuth())
 

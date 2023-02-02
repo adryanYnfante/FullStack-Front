@@ -65,6 +65,10 @@ export class ServiceService {
     }
   }
 
+  logOut(){
+    return this.afauth.signOut();
+  }
+
   getUserLogged() {
     return this.afauth.authState;
   }

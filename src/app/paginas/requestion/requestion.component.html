@@ -1,5 +1,4 @@
 <app-navbar></app-navbar>
-
   <div class="container">
     <div class="row">
       <div class="col-2">
@@ -30,15 +29,15 @@
           </div>
         </div>
       </div>
-      <div class="col-5">
-        <div class="accordion" id="accordionExample"  *ngFor="let questions of answers">
+
+      <div class="col-5" >
+        <cdk-virtual-scroll-viewport itemSize="50" minBufferPx="1" maxBufferPx="2" class="example-viewport">
+        <div class="accordion" id="accordionExample" *cdkVirtualFor="let questions of answers">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <h5 class="text-center">Respuesta: </h5>
                 <p-rating [cancel]="false" [(ngModel)]="questions.position" [disabled]="true"></p-rating>
-
-
                 <!-- Respuesta -->
               </button>
             </h2>
@@ -46,13 +45,14 @@
               <p>{{ questions.answer }}</p>
               <div class="accordion-body">
                 <strong></strong>
-
               </div>
             </div>
           </div>
         </div>
+      </cdk-virtual-scroll-viewport>
       </div>
 
     </div>
   </div>
+
 
