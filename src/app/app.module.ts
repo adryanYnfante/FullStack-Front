@@ -24,6 +24,7 @@ import { EditComponent } from './paginas/edit/edit.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
+    EditComponent,
+    EditAnswerComponent
   ],
   imports: [
     BrowserModule,

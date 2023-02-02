@@ -57,10 +57,14 @@ export class PreguntasComponent implements OnInit {
 
   previousPage(): void {
     !this.isFirst() ? (this.page--, this.getQuestions()) : false;
+
   }
 
   nextPage(): void {
+    console.log('Next');
     !this.isLast() ? (this.page++, this.getQuestions()) : false;
+    console.log(this.page);
+    console.log(this.totalQuestions)
   }
 
   getPage(page: number): void {
