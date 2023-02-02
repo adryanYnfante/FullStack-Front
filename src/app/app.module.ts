@@ -26,6 +26,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { MatCardModule } from '@angular/material/card';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
+    EditComponent,
+    EditAnswerComponent
 
   ],
   imports: [

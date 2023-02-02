@@ -28,6 +28,7 @@ export class PreguntasComponent implements OnInit {
   ngOnInit(): void {
     this.getQuestions();
     this.traerdatos();
+
   }
 
   getQuestions(): void {
@@ -36,6 +37,7 @@ export class PreguntasComponent implements OnInit {
     });
     this.service.getPage(this.page).subscribe((data) => {
         this.questions = data;
+        console.log(' this.questions :>> ',  this.questions);
     });
     this.service
       .getTotalPages()
