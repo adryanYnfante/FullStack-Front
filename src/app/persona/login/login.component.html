@@ -24,17 +24,17 @@
           class="p-button-outlined p-button-secondary" style="margin-bottom: 10px;"></button>
         <br><br>
         <p>Aun no tienes cuenta? <a href="/registro">Registrate</a></p>
+        <button (click)="recovery()" pButton pRipple type="button" label="Recuperar contraseña"
+          class="p-button-outlined p-button-danger" style="margin-bottom: 10px;"></button>
       </form>
     </div>
     <div>
     </div>
   </div>
 </div>
-
 <!-- <div class="container2">
     <button type="button" (click)="preguntasHome()" pButton pRipple label="Preguntas" class="p-button-danger mb-2"><i class="pi pi-user-edit" style="margin-top: 5px;"></i></button>
 </div> -->
-
 <p-dialog header="Recuperar Contraseña" [(visible)]="displayModal" [modal]="true" [style]="{width: '20vw'}"
   [draggable]="false" [resizable]="false">
   <p-progressSpinner *ngIf="mostrar2" [style]="{width: '20', height: '20px'}" styleClass="custom-spinner"
@@ -44,7 +44,7 @@
     <div class="col-12 md:col-4">
       <div class="p-inputgroup">
         <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-        <input formControlName="email" type="text" pInputText placeholder="Ejemplo01@gmail.com">
+        <input formControlName="email" type="text" pInputText placeholder="Ejemplo01@gmail.com" required="true">
       </div>
     </div>
     <div class="centrar">

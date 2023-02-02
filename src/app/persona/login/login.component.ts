@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   mostrar: Boolean = false;
   mostrar2: Boolean = false;
   val1: number = 3;
-  displayModal: boolean = true;
+  displayModal: boolean = false;
   email: any = '';
 
   public form: FormGroup = this.formBuilder.group({
@@ -115,6 +115,10 @@ export class LoginComponent implements OnInit {
 
   showModalDialog() {
     this.displayModal = true;
+  }
+
+  async recovery(){
+    this.displayModal= true;
   }
 
   recuperarEmail() {
