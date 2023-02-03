@@ -6,3 +6,45 @@
 .font2{
     font-family: 'Roboto Slab', serif;
 }
+
+.btn {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 0;
+  background: #f96ea8;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.googleBtn {
+  background: #4dd5fe;
+}
+
+.forgotPassword {
+  text-align: center;
+  margin: -12px 0 15px 0;
+  float: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.forgotPassword span {
+  color: #4dd5fe;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.scroll {
+  /* height: 400px !important; */
+  /* scroll-behavior: smooth;
+  overflow-y: scroll; */
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

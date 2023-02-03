@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { QuestionI } from '../models/question-i';
-import { AnswerI } from '../models/answer-i';
+import { AnswerI} from '../models/answer-i';
 @Injectable({
   providedIn: 'root',
 })
@@ -58,5 +58,10 @@ export class QuestionService {
   editQuestion(question: QuestionI): Observable<any> {
     let direction = this.url + 'update';
     return this.http.post<any>(direction, question);
+  }
+
+  editAnswer(answer: AnswerI):  Observable<any> {
+    let direction = this.url + 'updateAnswer';
+    return this.http.put<any>(direction, answer);
   }
 }
