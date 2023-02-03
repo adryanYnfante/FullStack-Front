@@ -1,10 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 .font1{
-    font-family: 'Koulen', cursive;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .font2{
-    font-family: 'Roboto Slab', serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Press Start 2P', cursive;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 1; font-family:cursive, "Helvetica Neue", sans-serif; }
+
+.wrapper {
+  background-color: #5957e3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}

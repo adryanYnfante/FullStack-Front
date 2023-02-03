@@ -4,7 +4,7 @@
     gap: 1px 10px;
     align-items: center;
   }
-  
+
   .summary-questions{
     height: 130px;
     display: grid;
@@ -12,7 +12,8 @@
     align-items: flex-end;
     gap: 1px 1px;
   }
-  
+
   .p-rating {
     color: #ff0707;
 }
+

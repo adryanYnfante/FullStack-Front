@@ -21,7 +21,7 @@
 
                 <br>
               </div>
-              <button pButton (click)="editQuestion(question)" pRipple type="button" label="Actualizar Pregunta" class="p-button-outlined p-button-info"></button>
+              <button  (click)="editQuestion(question)"  type="button" label="Actualizar Pregunta" class="btn btn-outline-success">Actualizar pregunta</button>
 
             <hr>
           </div>
@@ -30,8 +30,8 @@
 
     </div>
     <div class="modal-footer">
-      <button pButton pRipple type="button" label="Cerrar" class="p-button-outlined p-button-secondary" (click)="modal.close('Close click')"></button>
+      <button   type="button" label="Cerrar" class="btn btn-outline-success" (click)="modal.close('Close click')">Cerrar</button>
     </div>
   </ng-template>
 
-  <button class="btn btn-outline-primary mb-2 me-2" (click)="openVerticallyCentered(content)" *ngIf="authService.userData">Editar</button>
+  <button class="btn btn-success" (click)="openVerticallyCentered(content)" *ngIf="authService.userData">Editar</button>

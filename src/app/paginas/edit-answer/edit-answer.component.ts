@@ -12,6 +12,7 @@ import { QuestionI } from 'src/app/models/question-i';
 import { QuestionService } from 'src/app/Service/question.service';
 import { ServiceService } from 'src/app/Service/service.service';
 
+
 @Component({
   selector: 'app-edit-answer',
   templateUrl: './edit-answer.component.html',
@@ -58,8 +59,13 @@ export class EditAnswerComponent implements OnInit {
             severity: 'success',
             summary: 'Se ha agregado la respuesta',
            })}},
+           error: (e) =>
+          this.toastr.error(e.mesaje, 'Fail', {
+            timeOut: 3000,
+          })
 
-    });
+
+    })
 
 
 

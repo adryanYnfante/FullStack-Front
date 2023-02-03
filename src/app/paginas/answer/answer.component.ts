@@ -64,7 +64,7 @@ export class AnswerComponent implements OnInit {
            });
            setTimeout(() => {
            window.location.reload();
-         }, 1000);
+         }, 500);
         }
       },
       error: (e) =>
