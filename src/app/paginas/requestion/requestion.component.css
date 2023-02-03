@@ -5,3 +5,17 @@
     width: 100vw;
     height: 60vh;
 } */
+
+.viewport {
+  height: 500px;
+  width: 100%;
+}
+
+.footer-answer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 16px 0px;
+}
+
+

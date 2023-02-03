@@ -18,6 +18,11 @@ export class QuestionService {
 
   constructor(private http: HttpClient) {}
 
+  getAll(): Observable<QuestionI[]> {
+    let direction = this.url + 'getAll';
+    return this.http.get<QuestionI[]>(direction);
+  }
+
   getPage(page: number): Observable<QuestionI[]> {
     let direction = this.url + 'pagination/' + page;
     return this.http.get<QuestionI[]>(direction);
@@ -57,6 +62,11 @@ export class QuestionService {
 
   editQuestion(question: QuestionI): Observable<any> {
     let direction = this.url + 'update';
-    return this.http.post<any>(direction, question);
+    return this.http.put<any>(direction, question);
+  }
+
+  editAnswer(answer: AnswerI): Observable<any> {
+    let direction = this.url + 'updateAnswer';
+    return this.http.put<any>(direction, answer);
   }
 }
