@@ -40,6 +40,8 @@ export class EditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getData();
+    this.getDatos();
   }
 
   getDatos(){
