@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnswerI } from 'src/app/models/answer-i';
 import { QuestionI } from 'src/app/models/question-i';
 import { QuestionService } from 'src/app/Service/question.service';
@@ -25,7 +25,8 @@ export class RequestionComponent implements OnInit {
     private route:ActivatedRoute,
     private questionService:QuestionService,
     private service: QuestionService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
 
     ) {
 
@@ -64,7 +65,11 @@ export class RequestionComponent implements OnInit {
     this.currentAnswer+=10;
   }
 
-  
+  volver(){
+    this.router.navigate(['preguntas']);
+  }
+
+
 
 
 

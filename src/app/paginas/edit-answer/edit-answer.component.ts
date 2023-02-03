@@ -31,6 +31,9 @@ export class EditAnswerComponent implements OnInit {
   }
 
   updateAnswer(): void {
+    if(this.answer.answer && this.answer.position){
+      this.modalService.dismissAll();
+
     this.services.editAnswer(this.answer).subscribe({
       next: (v) => {
         if (v) {
@@ -45,9 +48,10 @@ export class EditAnswerComponent implements OnInit {
       },
       error: (e) => {
         console.log(e);
-        
+
       },
       complete: () => console.info('complete'),
     });
+  }
   }
 }
