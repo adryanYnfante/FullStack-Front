@@ -74,4 +74,8 @@ export class AnswerComponent implements OnInit {
       complete: () => console.info('complete'),
     });
   }
+
+  login(){
+    this.route.navigate(['']);
+  }
 }

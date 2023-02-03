@@ -6,7 +6,7 @@
 
 
 
-        <button  type="button" label="Salir" class="p-button-warning" style="display: none; visibility: hidden;"  (click)="logout()" *ngIf="userLogged" [style]="{visibility: 'visible',display: 'block' }">Salir</button>
+        <button  type="button" label="Salir" *ngIf="authService.userData as user" class="p-button-warning"    (click)="logout()"  >Salir</button>
 
 
 
