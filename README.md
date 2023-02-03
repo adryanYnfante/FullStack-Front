@@ -25,3 +25,33 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Objetivo
+
+Funcionalidades a Añadir:
+###### ●	Consumo del back-end actual 5 puntos
+###### ●	Uso adecuado de rutas 8 puntos
+###### ●	Conexión Firebase y Mongo 10 puntos
+###### ●	Inicio sesión usuario/contraseña 6 puntos
+###### ●	Autenticación con Gmail 5 puntos
+###### ●	Restablecer contraseña 5 puntos
+###### ●	Sistema para calificación de las respuestas 10 puntos
+###### ● respuestas 15 puntos
+###### ● infinito de respuestas 8 puntos
+###### ●	Páginador de Preguntas (BackEnd) 10 puntos
+###### ●	Uso adecuado de Observable en Angular 5 puntos
+###### ●	Uso de algún frameworks o preprocesador CSS 3 puntos
+###### ●	Uso de Swagger 10 puntos
+###### ●	Test Unitarios + 20
+
+### Herramientas
+
+![](https://d1v8cmtpnjamtp.cloudfront.net/courses/BO/logo_1645636404095.svg)
+![](https://cdn.iconscout.com/icon/free/png-256/firebase-3628772-3030134.png)
+![](https://cdn.iconscout.com/icon/free/png-256/angular-226066.png)
+
+
+
+### BACK
+###### ●	https://github.com/BERTOTEM/FullStack-Back
