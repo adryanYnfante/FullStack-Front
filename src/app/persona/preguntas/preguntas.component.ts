@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { QuestionI } from 'src/app/models/question-i';
 import { QuestionService } from 'src/app/Service/question.service';
 import { ServiceService } from 'src/app/Service/service.service';
@@ -9,6 +11,7 @@ import { ServiceService } from 'src/app/Service/service.service';
   styleUrls: ['./preguntas.component.css'],
 })
 export class PreguntasComponent implements OnInit {
+  dataUser:any;
   userLogged = this.authService.getUserLogged();
   uid: any;
 
@@ -22,18 +25,21 @@ export class PreguntasComponent implements OnInit {
 
   constructor(
     private service: QuestionService,
-    public authService: ServiceService
+    public authService: ServiceService,
+    private afAuth: AngularFireAuth,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
     this.getQuestions();
     this.traerdatos();
+    
   }
 
   getQuestions(): void {
     this.userLogged.subscribe(value =>{
         this.uid=value?.uid
-       
+
     });
     this.service.getPage(this.page).subscribe((data) => {
         this.questions = data;

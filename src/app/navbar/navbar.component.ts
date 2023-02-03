@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { ServiceService } from '../Service/service.service';
 
@@ -11,7 +12,8 @@ export class NavbarComponent implements OnInit {
   userLogged = this.authService.getUserLogged();
   disabled: boolean = false;
 
-  constructor(private authService: ServiceService, private route: Router) {}
+  constructor(public authService: ServiceService, private route: Router,
+    private afAuth: AngularFireAuth,) {}
 
   ngOnInit(): void {
     this.traerdatos();
@@ -29,6 +31,17 @@ export class NavbarComponent implements OnInit {
 
   login() {
     this.route.navigate(['login']);
+  }
+
+  logout(){
+    this.afAuth.signOut().then(()=>{
+      this.route.navigate(['']);
+
+
+    })
+
+
+
   }
 
 
