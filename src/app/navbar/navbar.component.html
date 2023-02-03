@@ -6,7 +6,8 @@
         
         
         
-      <button type="button" label="Iniciar Sesion" class="p-button-warning" (click)="login()">Inicia sesión</button>
+      <!-- <button type="button" label="Iniciar Sesion" class="p-button-warning" (click)="login()">Inicia sesión</button> -->
+      <button type="button" *ngIf="authService.userData" label="Iniciar Sesion" class="p-button-warning" (click)="logout()">Logout</button>
       
 
      
