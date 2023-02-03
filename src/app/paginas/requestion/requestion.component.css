@@ -5,3 +5,19 @@
     width: 100vw;
     height: 60vh;
 } */
+
+::ng-deep .p-scrollpanel .p-scrollpanel-bar {
+    background: black;
+    }
+
+    cdk-virtual-scroll-viewport{
+        height: 200px;
+    }
+
+    .viewport{
+        height: 400px;
+        width: 400px;
+        border: 1px dotted black;
+        text-align: center;
+    }
+

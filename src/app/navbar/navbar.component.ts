@@ -31,5 +31,13 @@ export class NavbarComponent implements OnInit {
     this.route.navigate(['login']);
   }
 
+  logout(){
+    // this.authService.logout()
+    // .then(()=>{
+    //   this.route.navigate(['/login']);
+    // })
+    // .catch(error => console.log(error));
+  }
+
   
 }
