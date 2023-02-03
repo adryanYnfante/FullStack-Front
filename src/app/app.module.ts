@@ -23,6 +23,8 @@ import { EditComponent } from './paginas/edit/edit.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 
@@ -36,7 +38,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
+    EditComponent,
+    EditAnswerComponent
        
   ],
   imports: [
@@ -48,11 +51,11 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
     NgbModule,
+    ScrollingModule,
     FormsModule,
     ToastrModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
-    
    
     
   ],

@@ -10,19 +10,27 @@ import { ServiceService } from '../Service/service.service';
 export class NavbarComponent implements OnInit {
   userLogged = this.authService.getUserLogged();
   disabled: boolean = false;
-
-  constructor(private authService: ServiceService, private route: Router) {}
+  photoURL:any;
+  
+  constructor(public authService: ServiceService, private route: Router) {}
 
   ngOnInit(): void {
     this.traerdatos();
+    this.getphotoURL();
+    
+   
+    
   }
+  
 
   traerdatos() {
     this.userLogged.subscribe((value) => {    
       if (value?.email == undefined) {
-        this.disabled = true;        
+        this.disabled = true; 
+               
       } else {
-        this.disabled = false;       
+        this.disabled = false;   
+      
       }
     });
   }
@@ -31,5 +39,16 @@ export class NavbarComponent implements OnInit {
     this.route.navigate(['login']);
   }
 
-  
+  logOut() {
+    this.authService.logOut()
+      .then(() => {
+      })
+      .catch(error => console.log(error));
+  }
+
+  getphotoURL(){
+    this.userLogged.subscribe(x=>{ this.photoURL= x?.photoURL
+    })
+  }
+
 }

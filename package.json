@@ -31,6 +31,8 @@
     "eva-icons": "^1.1.2",
     "express": "^4.18.1",
     "firebase": "^9.8.1",
+    "jquery": "^3.6.3",
+    "ngx-infinite-scroll": "^13.0.0",
     "ngx-toastr": "^14.3.0",
     "path": "^0.12.7",
     "primeicons": "^5.0.0",
