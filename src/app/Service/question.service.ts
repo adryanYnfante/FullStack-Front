@@ -34,7 +34,7 @@ export class QuestionService {
   }
 
   getTotalPages(): Observable<number> {
-    let direction = this.url + 'totalPages';
+    let direction = this.url + 'getTotalPages';
     return this.http.get<number>(direction);
   }
 
@@ -58,5 +58,10 @@ export class QuestionService {
   editQuestion(question: QuestionI): Observable<any> {
     let direction = this.url + 'update';
     return this.http.post<any>(direction, question);
+  }
+
+  editAnswer(answer: AnswerI):  Observable<any> {
+    let direction = this.url + 'updateAnswer';
+    return this.http.put<any>(direction, answer);
   }
 }

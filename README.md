@@ -1,4 +1,4 @@
-# RetoSofka
+# RetoSofka FullStack-Front
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
 
@@ -25,3 +25,31 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Funcionalidades a Añadir
+
+* Conexión Firebase
+* Inicio sesión usuario/contraseña
+* Autenticación con Gmail
+* Restablecer contraseña
+* Editar respuestas
+* Scroll infinito de respuestas
+
+### Tecnologias :wrench:
+
+*	VSC
+
+![](https://code.visualstudio.com/assets/apple-touch-icon.png)
+
+* Angular
+
+![](https://miro.medium.com/max/256/1*8HndWtUBXmokgvrEaOpirw.png)
+
+* Firebase 
+
+![](https://midu.dev/images/tags/firebase.png)
+
+### Autor
+[@Nirsch95](https://github.com/Nirsch95) - Andrés Castro :wolf:
+
+Everything is solved in the main branch, new things were learned.

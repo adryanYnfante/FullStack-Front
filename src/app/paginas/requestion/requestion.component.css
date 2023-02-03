@@ -1,7 +1,13 @@
-/* .container{
+/*.container{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 60vh;
-} */
+}*/
+
+cdk-virtual-scroll-viewport {
+  height: 300px;
+  /* width: 100%; */
+}
+

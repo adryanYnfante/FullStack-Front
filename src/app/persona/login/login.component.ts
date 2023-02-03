@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   public form: FormGroup = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(10)]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
     rating: ['', []],
   });
   public form2: FormGroup = this.formBuilder.group({
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     this.mostrar = !this.mostrar;
     this.authService
       .login(this.form.value.email, this.form.value.password)
-      .then((res) => {       
+      .then((res) => {
         if (res == undefined) {
           this.messageService.add({
             severity: 'error',
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
       });
   }
   ingresarGoogle() {
-    this.mostrar = !this.mostrar;       
+    this.mostrar = !this.mostrar;
     this.authService
       .loginGoogle(this.form.value.email, this.form.value.password)
       .then((res) => {
@@ -79,16 +79,16 @@ export class LoginComponent implements OnInit {
             summary: 'Rectifique los datos',
             detail: 'Clave o Usuario incorrecto, Intente de Nuevo',
           });
-          
+
         }
         this.mostrar = !this.mostrar;
       });
   }
   getUserLogged() {
-    this.authService.getUserLogged().subscribe((res) => {     
+    this.authService.getUserLogged().subscribe((res) => {
     });
   }
- 
+
   preguntasHome() {
     this.route.navigate(['preguntas']);
   }

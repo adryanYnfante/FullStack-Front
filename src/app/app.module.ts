@@ -8,8 +8,7 @@ import { LoginComponent } from './persona/login/login.component';
 import { PreguntasComponent } from './persona/preguntas/preguntas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularFireModule} from '@angular/fire/compat'
-import { environment } from 'src/environments/environment';
+import { AngularFireModule} from '@angular/fire/compat';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistroComponent } from './persona/registro/registro.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -21,6 +20,11 @@ import { ToastModule } from 'primeng/toast';
 import { ToastrModule } from 'ngx-toastr';
 import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
+//import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component';
+//import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
 
@@ -30,12 +34,13 @@ import { EditComponent } from './paginas/edit/edit.component';
     LoginComponent,
     PreguntasComponent,
     NavbarComponent,
-    RegistroComponent, 
+    RegistroComponent,
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
-       
+    EditComponent,
+    EditAnswerComponent
+
   ],
   imports: [
     BrowserModule,
@@ -43,14 +48,15 @@ import { EditComponent } from './paginas/edit/edit.component';
     PrimeNGModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
     NgbModule,
     FormsModule,
-    ToastrModule.forRoot()
-    
-   
-    
+    ToastrModule.forRoot(),
+    ScrollingModule
+    //provideFirebaseApp(() => initializeApp(environment.firebase)),
+    //provideAuth(() => getAuth())
+
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
