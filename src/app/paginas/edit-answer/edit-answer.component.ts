@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
@@ -8,46 +8,73 @@ import { AnswerI } from 'src/app/models/answer-i';
 import { QuestionI } from 'src/app/models/question-i';
 import { QuestionService } from 'src/app/Service/question.service';
 import { ServiceService } from 'src/app/Service/service.service';
-
-
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css'],
-  providers: [MessageService],
+  selector: 'app-edit-answer',
+  templateUrl: './edit-answer.component.html',
+  styleUrls: ['./edit-answer.component.css'],
+  providers: [MessageService]
 })
-export class QuestionComponent implements OnInit {
+export class EditAnswerComponent implements OnInit {
+
+  @Input() question2: QuestionI[] | undefined;
+  userLogged = this.authService.getUserLogged();
   answers: AnswerI[] | undefined;
-  question: answe = {
-    id:
-      '',
-    userId:
-      this.authService.userData.uid == undefined
-        ? ''
-        : this.authService.userData.uid,
-    question: '',
-    type: '',
-    category: '',
-    answers:[null],
-    start: '2'
+  @Input() idanswer: any='';
+  question: AnswerI = {
+    id:'',
+    userId:'',
+   questionId:'',
+   answer:'',
+   position:0
   };
 
   constructor(
     private modalService: NgbModal,
-    private authService: ServiceService,
+    public authService: ServiceService,
     private services: QuestionService,
     private toastr: ToastrService,
     private route: Router,
     private messageService: MessageService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getData();
+    this.getDatos();
+  }
+
+  getDatos(){
+    this.question=this.idanswer;
+    
+  }
+  
 
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
   }
 
-  
+  getData(){    
+    this.userLogged.subscribe(value=>{
+    })
+    
+  }
+
+  editAnswer(question: AnswerI): void{
+ 
+    this.services.editAnswer(question).subscribe((v)=>{
+     
+    });
+
+    this.modalService.dismissAll();
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Se ha actualizado la respuesta',          
+     });
+     setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+    
+  }
+
   saveQuestion(question: QuestionI): void {
     if(question.type && question.category){    
      this.modalService.dismissAll();

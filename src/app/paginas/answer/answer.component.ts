@@ -24,6 +24,7 @@ export class AnswerComponent implements OnInit {
   });
 
   @Input() item: any;
+  @Input() userId: any;
   constructor(
     private modalService: NgbModal,
     private services: QuestionService,
@@ -47,8 +48,9 @@ export class AnswerComponent implements OnInit {
     this.modalService.open(content, { centered: true });
   }
 
+  
   saveAnswer(): void {
-    this.answer.userId = this.item.userId;
+    this.answer.userId = this.userId;
     this.answer.questionId = this.item.id;
     this.services.saveAnswer(this.answer).subscribe({
       next: (v) => {

@@ -42,12 +42,15 @@ export class PreguntasComponent implements OnInit {
       .subscribe((data) => (this.pages = new Array(data)));
     this.service
       .getCountQuestions()
-      .subscribe((data) => (this.totalQuestions = data));
+      .subscribe((data) => (this.totalQuestions = data
+      ));
+      
+      
   }
 
   isLast(): boolean {
-    let totalPeges: any = this.pages?.length;
-    return this.page == totalPeges - 1;
+    let totalPages: any = this.pages?.length;
+    return this.page == totalPages - 1;
   }
 
   isFirst(): boolean {

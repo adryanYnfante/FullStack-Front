@@ -1,14 +1,76 @@
-  <nav class="navbar bg-light">
-    <div class="container-fluid">
-      <a href="/preguntas">
-          <img src="https://ik.imagekit.io/lvh0tltbeph/SofkaU/logo-sofkau_1Fn3uH-1S.png?ik-sdk-version=javascript-1.4.3&updatedAt=1645658493330" alt="" width="200" height="75">
-        </a>
-        
-        
-        
-      <button type="button" label="Iniciar Sesion" class="p-button-warning" (click)="login()">Inicia sesión</button>
-      
 
-     
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#4997ca;">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="/preguntas">
+        <img
+        src="https://ik.imagekit.io/lvh0tltbeph/SofkaU/logo-sofkau_1Fn3uH-1S.png?ik-sdk-version=javascript-1.4.3&updatedAt=1645658493330"
+          height="31"
+          loading="lazy"
+        />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/preguntas">Preguntas</a>
+        </li >
+        <li class="nav-item">
+          <a *ngIf="!authService.userData" class="nav-link" href="/login">Iniciar sesión</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="authService.userData" class="nav-link" href="/login"(click)="logOut()">Cerrar sesión</a>
+        </li>
+       
+      </ul>
+      <!-- Left links -->
+      <div class="d-flex align-items-center">
+        <button *ngIf="!authService.userData" type="button" class="btn btn-primary px-3 me-2" (click)="login()">
+          Iniciar Sesión
+        </button>     
+      </div>
     </div>
-  </nav>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+
+      <!-- Notifications -->
+     
+      <!-- Avatar -->
+      <div class="" *ngIf="authService.userData">
+        
+          <img *ngIf="photoURL"
+            src="{{photoURL}}"
+            class="rounded-circle"
+            height="32"
+            
+            loading="lazy"
+          />
+
+        
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+

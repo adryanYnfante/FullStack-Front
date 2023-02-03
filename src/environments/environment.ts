@@ -3,16 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  firebase: {
+    projectId: 'login-fire-authh',
+    appId: '1:985774395894:web:4bf540a90554df0d8b37d7',
+    storageBucket: 'login-fire-authh.appspot.com',
+    apiKey: 'AIzaSyC55CXCWC-qih6bzsTGFJN-_OryGkFWsR8',
+    authDomain: 'login-fire-authh.firebaseapp.com',
+    messagingSenderId: '985774395894',
+  },
   production: true,
-  firebaseConfig : {
-    apiKey: "AIzaSyBNJi20rFfv81no5l99AFImQS20_a0_LCg",
-    authDomain: "fir-83199.firebaseapp.com",
-    projectId: "fir-83199",
-    storageBucket: "fir-83199.appspot.com",
-    messagingSenderId: "1097598825117",
-    appId: "1:1097598825117:web:0b5b4b34c8e1abc3815a74"
-  }
-
   
 };
 

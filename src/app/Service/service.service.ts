@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Auth,signOut } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-
 import firebase from 'firebase/compat/app';
 import { User } from '../models/user';
 
@@ -15,6 +15,7 @@ import { User } from '../models/user';
 export class ServiceService {
   userData: any;
   constructor(
+    public auth: Auth,
     public afauth: AngularFireAuth,
     public store: AngularFirestore,
     public router: Router
@@ -30,6 +31,8 @@ export class ServiceService {
       }
     });
   }
+
+  
 
   async login(email: string, password: string) {
     try {
@@ -84,5 +87,9 @@ export class ServiceService {
     return userRef.set(userData, {
       merge: true,
     });
+  }
+
+  logOut(){
+    return signOut(this.auth);
   }
 }
