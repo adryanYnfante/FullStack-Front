@@ -41,17 +41,17 @@
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <h5 class="text-center">Respuesta: </h5>
                 <p-rating [cancel]="false" [(ngModel)]="questions.position" [disabled]="true"></p-rating>
-     
-                
+                <!-- respuesta -->
+               <app-edit-answer [answer]="questions"></app-edit-answer>
                 <!-- Respuesta -->
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <p>{{ questions.answer }}</p>  
-                     <p>{{questions.position}}</p>
+                     
               <div class="accordion-body">
                 <strong></strong> 
-              
+             
               </div>
             </div>
           </div>
