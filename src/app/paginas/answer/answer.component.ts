@@ -31,7 +31,8 @@ export class AnswerComponent implements OnInit {
     private route: Router,
     private formBuilder: FormBuilder,
     private messageService: MessageService,
-    public authService: ServiceService
+    public authService: ServiceService,
+    private router : Router
   ) {}
 
   answer: AnswerI = {
@@ -47,7 +48,9 @@ export class AnswerComponent implements OnInit {
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
   }
-
+  goToLogIn(){
+    this.router.navigate(['login'])
+  }
   saveAnswer(): void {
     this.answer.userId = this.item.userId;
     this.answer.questionId = this.item.id;    
