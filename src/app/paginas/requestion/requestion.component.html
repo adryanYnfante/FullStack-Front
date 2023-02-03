@@ -46,7 +46,8 @@
                 <!-- Respuesta -->
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            <!-- Bloquear acordeón para que no se colapse: id="panelsStayOpen" y que se colapse id="collapseOne" -->
+            <div id="panelsStayOpen" class="accordion-collapse collapse show" aria-labelledby="headingOne"
               data-bs-parent="#accordionExample">
               <p style="margin-top: 20px; margin-bottom: -20px;">{{ questions.answer }}</p>
               <div class="accordion-body">
