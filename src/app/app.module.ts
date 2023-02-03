@@ -21,6 +21,10 @@ import { ToastModule } from 'primeng/toast';
 import { ToastrModule } from 'ngx-toastr';
 import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component';
 
 
 
@@ -34,7 +38,8 @@ import { EditComponent } from './paginas/edit/edit.component';
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
+    EditComponent,
+    EditAnswerComponent
        
   ],
   imports: [
@@ -47,6 +52,9 @@ import { EditComponent } from './paginas/edit/edit.component';
     HttpClientModule,
     NgbModule,
     FormsModule,
+    ScrollingModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule,
     ToastrModule.forRoot()
     
    

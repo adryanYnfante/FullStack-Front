@@ -12,6 +12,9 @@ import {MenuModule} from 'primeng/menu';
 import {DividerModule} from 'primeng/divider';
 import {DialogModule} from 'primeng/dialog';
 
+import {ScrollPanelModule} from 'primeng/scrollpanel'
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 
 
 
@@ -29,7 +32,9 @@ import {DialogModule} from 'primeng/dialog';
     ToastModule,
     MenuModule,
     DividerModule,
-    DialogModule
+    DialogModule,
+    ScrollPanelModule,
+    ScrollingModule
     
     
   ]

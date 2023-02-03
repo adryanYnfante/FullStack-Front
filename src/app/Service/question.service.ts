@@ -24,6 +24,7 @@ export class QuestionService {
   }
 
   getAnswer(id: any): Observable<QuestionI> {
+    console.log(id)
     let direction = this.url + 'get/' + id;
     return this.http.get<QuestionI>(direction);
   }
@@ -57,6 +58,12 @@ export class QuestionService {
 
   editQuestion(question: QuestionI): Observable<any> {
     let direction = this.url + 'update';
-    return this.http.post<any>(direction, question);
+    return this.http.put<any>(direction, question);
+  }
+
+  editAnswer(answer: AnswerI): Observable<any> {
+    //console.log(answer.id)
+    let direction = this.url + 'updateAnswer';
+    return this.http.put<any>(direction, answer);
   }
 }

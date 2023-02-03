@@ -40,6 +40,14 @@ export class ServiceService {
       return null;
     }
   }
+
+  async logout(){
+    return this.afauth.signOut().then(()=>{  
+      
+    })
+  }
+
+
   async loginRegistre(email: string, password: string) {
     try {
       return await this.afauth
@@ -67,6 +75,19 @@ export class ServiceService {
 
   getUserLogged() {
     return this.afauth.authState;
+  }
+
+  thereLog():boolean | undefined{
+    let flag = false
+    this.afauth.authState.subscribe(res => {
+      if(res!= null){
+        flag = true;
+      }else{
+        flag = false;
+      }
+    });
+
+    return flag;
   }
 
 

@@ -1,5 +1,5 @@
 <p-toast></p-toast>
-<app-navbar></app-navbar>
+<app-navbar [thereLog]="thereLog" ></app-navbar>
 <div style="text-align: right;">   
     
 </div>
@@ -33,13 +33,17 @@
                 </span>
     
                            
-                <button [disabled]="form.invalid" (click)="ingresar()" pButton pRipple type="button" label="Iniciar" class="p-button-outlined p-button-secondary" style="margin-bottom: 10px;"></button>                        
+                <button [disabled]="form.invalid" (click)="ingresar()" pButton pRipple type="button" label="Iniciar" class="p-button-outlined p-button-secondary" style="margin-bottom: 10px;"></button>    
+                <div>
+                    <button type="button" (click)="ingresarGoogle()" pButton pRipple label="Google" class="p-button-outlined p-button-secondary" style="margin-bottom: 10px;"></button>
+                </div>                    
                 
                 <br>
                       
                  
                 <br>              
-                <p>Aun no tienes cuenta? <a href="/registro" >Registrate</a></p>   
+                <p>¿Aún no tienes cuenta? <a href="/registro" >Registrate</a></p>   
+                <p (click)="showModalDialog()"> <a  >Recuperar contraseña</a></p> 
                
                
      

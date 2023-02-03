@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService, Message } from 'primeng/api';
@@ -11,11 +11,16 @@ import { ServiceService } from 'src/app/Service/service.service';
   providers: [MessageService],
 })
 export class LoginComponent implements OnInit {
+
+ 
+
   mostrar: Boolean = false;
   mostrar2: Boolean = false;
   val1: number = 3;
   displayModal: boolean = false;
   email: any = '';
+  thereLog: boolean = false;
+ 
 
   public form: FormGroup = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
@@ -35,6 +40,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+
+
+
   ingresar() {
     this.mostrar = !this.mostrar;
     this.authService
@@ -47,17 +55,21 @@ export class LoginComponent implements OnInit {
             detail: 'Clave o Usuario incorrecto, Intente de Nuevo',
           });
         } else {
+          this.thereLog = true;
+          console.log(this.thereLog)
           this.messageService.add({
             severity: 'success',
             summary: 'Bienvenido',
             detail: 'Disfruta de tu estadía',
           });
           this.route.navigate(['preguntas']);
+          
         }
 
         this.mostrar = !this.mostrar;
       });
   }
+
   ingresarGoogle() {
     this.mostrar = !this.mostrar;       
     this.authService
@@ -85,7 +97,8 @@ export class LoginComponent implements OnInit {
       });
   }
   getUserLogged() {
-    this.authService.getUserLogged().subscribe((res) => {     
+    this.authService.getUserLogged().subscribe((res) => {  
+      console.log(res)   
     });
   }
  
