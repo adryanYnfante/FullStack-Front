@@ -24,6 +24,7 @@ import { EditComponent } from './paginas/edit/edit.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component';
 
 
 
@@ -37,7 +38,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
+    EditComponent,
+    EditAnswerComponent
        
   ],
   imports: [
