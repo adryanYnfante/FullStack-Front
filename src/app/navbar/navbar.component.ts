@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from '../Service/service.service';
 
@@ -8,13 +8,20 @@ import { ServiceService } from '../Service/service.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+
+  @Input() thereLog!:boolean;
+
   userLogged = this.authService.getUserLogged();
   disabled: boolean = false;
+  
 
   constructor(private authService: ServiceService, private route: Router) {}
 
   ngOnInit(): void {
     this.traerdatos();
+    this.thereLog = false
+   
+    
   }
 
   traerdatos() {
@@ -28,16 +35,22 @@ export class NavbarComponent implements OnInit {
   }
 
   login() {
+    console.log(this.thereLog)
     this.route.navigate(['login']);
   }
 
-  logout(){
-    // this.authService.logout()
-    // .then(()=>{
-    //   this.route.navigate(['/login']);
-    // })
-    // .catch(error => console.log(error));
+   logout(){
+    this.authService.logout()
+    .then(()=>{
+      this.thereLog = false
+      console.log(this.thereLog)
+      this.route.navigate(['/login']);
+      
+    })
+    .catch(error => console.log(error));
   }
+
+
 
   
 }
