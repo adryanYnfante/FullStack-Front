@@ -13,6 +13,8 @@
           <div class="card-body p-4">
             <input id="type" class="form-control m-2 font2" type="text" placeholder="Respuesta" [(ngModel)]="answer.answer" name="type" required/>
             <br>
+            <p-rating [cancel]="false" [(ngModel)]="answer.position"></p-rating>
+            <br>
             <!-- <input id="category" class="form-control m-2 font2" type="text" placeholder="Categorio de la Pregunta" name="category" [(ngModel)]="question.category" required /> -->
 
               <!-- <div class="form-floating font2" style="margin-top: 20px;">
