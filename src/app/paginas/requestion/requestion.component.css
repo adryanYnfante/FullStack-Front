@@ -5,3 +5,10 @@
     width: 100vw;
     height: 60vh;
 } */
+
+.search-results-container{
+ 
+  height: 439px;
+
+  overflow: auto;
+}

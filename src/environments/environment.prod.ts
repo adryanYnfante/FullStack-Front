@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig : {
-    apiKey: "AIzaSyBNJi20rFfv81no5l99AFImQS20_a0_LCg",
-    authDomain: "fir-83199.firebaseapp.com",
-    projectId: "fir-83199",
-    storageBucket: "fir-83199.appspot.com",
-    messagingSenderId: "1097598825117",
-    appId: "1:1097598825117:web:0b5b4b34c8e1abc3815a74"
+    apiKey: "AIzaSyDb6OkcDTjdZ_4F3fi9srmxZIBmLiwCIOA",
+    authDomain: "reto-fullstack.firebaseapp.com",
+    projectId: "reto-fullstack",
+    storageBucket: "reto-fullstack.appspot.com",
+    messagingSenderId: "787069333139",
+    appId: "1:787069333139:web:618d026c6febc9b7466766"
   }
 
 };
