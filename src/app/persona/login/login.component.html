@@ -34,13 +34,22 @@
     
                            
                 <button [disabled]="form.invalid" (click)="ingresar()" pButton pRipple type="button" label="Iniciar" class="p-button-outlined p-button-secondary" style="margin-bottom: 10px;"></button>                        
+                <div>O</div>
+                <button 
                 
+                class="btn btn-primary btn-lg btn-danger"
+                (click)="ingresarGoogle()"
+                >
+                Ingresar con Google
+            </button>                
                 <br>
                       
                  
                 <br>              
                 <p>Aun no tienes cuenta? <a href="/registro" >Registrate</a></p>   
-               
+                <button
+                class="btn btn-link"
+                (click)="showModalDialog()">Recuperar contraseña</button>            
                
      
             </form>           

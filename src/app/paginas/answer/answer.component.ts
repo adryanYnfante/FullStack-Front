@@ -35,6 +35,7 @@ export class AnswerComponent implements OnInit {
   ) {}
 
   answer: AnswerI = {
+    idAnswer:'',
     userId: '',
     questionId: '',
     answer: '',
@@ -49,10 +50,10 @@ export class AnswerComponent implements OnInit {
 
   saveAnswer(): void {
     this.answer.userId = this.item.userId;
-    this.answer.questionId = this.item.id;
+    this.answer.questionId = this.item.id;    
     this.services.saveAnswer(this.answer).subscribe({
       next: (v) => {
-        if(v){
+        if(v){         
           this.modalService.dismissAll();
           this.messageService.add({
             severity: 'success',

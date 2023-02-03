@@ -15,7 +15,8 @@ export class RequestionComponent implements OnInit {
   answers: AnswerI[] | undefined;
   answersNew: AnswerI[]=[];
   currentAnswer:number=0;
-
+  distance =2;
+  throttle=0;
   questions: QuestionI[] | undefined;
  
   page: number = 0;
@@ -48,7 +49,7 @@ export class RequestionComponent implements OnInit {
   }
 
   getQuestions(id:string):void{
-    this.questionService.getQuestion(id).subscribe(data=>{
+    this.questionService.getQuestion(id).subscribe(data=>{      
       this.question=data;
       this.answers = data.answers;
     })
@@ -63,7 +64,7 @@ export class RequestionComponent implements OnInit {
   }
 
   onScroll() {
-
+      
   }
 
 }

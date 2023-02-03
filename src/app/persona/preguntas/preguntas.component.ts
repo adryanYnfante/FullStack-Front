@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuestionI } from 'src/app/models/question-i';
 import { QuestionService } from 'src/app/Service/question.service';
 import { ServiceService } from 'src/app/Service/service.service';
@@ -22,7 +23,8 @@ export class PreguntasComponent implements OnInit {
 
   constructor(
     private service: QuestionService,
-    public authService: ServiceService
+    public authService: ServiceService,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
@@ -66,7 +68,9 @@ export class PreguntasComponent implements OnInit {
     this.page = page;
     this.getQuestions();
   }
-
+  goToLogIn(){
+    this.router.navigate(['login'])
+  }
   traerdatos() {
     this.userLogged.subscribe((value) => {     
       if (value?.email == undefined) {

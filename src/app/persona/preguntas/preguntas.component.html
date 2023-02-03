@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<div class="summary-questions container-lg">
+<div class="summary-questions container-lg" >
   <div>
     <p class="text-start fs-1 mb-1 font1">Todas las preguntas</p>
     <p class="text-start fs-4 font2">{{ totalQuestions }} Preguntas</p>
@@ -13,13 +13,13 @@
       pButton
       pRipple
       type="button"
-      disabled="true"
       label="Inicia Sesión Antes de Crear Preguntas"
       class="p-button-outlined p-button-danger"
+      (click)="goToLogIn()"
     ></button>
   </div>
 </div>
-<div class="container">
+<div class="container" *ngIf="authService.userData as user">
   <div class="question" *ngFor="let question of questions">
     <div class="card mb-3 h-200">
       <div class="row g-0">

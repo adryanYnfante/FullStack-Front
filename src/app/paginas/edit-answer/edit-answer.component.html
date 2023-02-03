@@ -1,0 +1,37 @@
+
+
+<p-toast></p-toast>
+<ng-template #content let-modal>
+    <div class="modal-header">       
+    </div>
+    <div class="modal-body">
+  
+      <div class="container">
+        <div class="card text-center">
+          <div class="card-header font2">
+            <b>Editar tu respuesta</b>
+          </div>
+          <div class="card-body p-4">           
+           
+              <div class="form-floating font2" style="margin-top: 20px;">
+                <textarea class="form-control m-2 font2" placeholder="Leave a comment here" id="question" style="height: 150px" [(ngModel)]="answerEdit.answer"></textarea>
+                <label for="floatingTextarea">Pregunta</label>
+                <p-rating [cancel]="false" [(ngModel)]="answerEdit.position" [disabled]="false"></p-rating>
+                
+                <br>
+              </div>
+              <button pButton (click)="editAnswer()" pRipple type="button" label="Actualizar respuesta" class="p-button-outlined p-button-info"></button>
+        
+            <hr>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <div class="modal-footer">
+      <button pButton pRipple type="button" label="Cerrar" class="p-button-outlined p-button-secondary" (click)="modal.close('Close click')"></button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-outline-primary mb-2 me-2" (click)="openVerticallyCentered(content)" *ngIf="authService.userData">Edit</button>
+  

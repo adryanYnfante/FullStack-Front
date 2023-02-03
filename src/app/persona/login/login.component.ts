@@ -54,7 +54,6 @@ export class LoginComponent implements OnInit {
           });
           this.route.navigate(['preguntas']);
         }
-
         this.mostrar = !this.mostrar;
       });
   }
@@ -63,6 +62,7 @@ export class LoginComponent implements OnInit {
     this.authService
       .loginGoogle(this.form.value.email, this.form.value.password)
       .then((res) => {
+        console.log(res)
         if (res) {
           this.messageService.add({
             severity: 'success',
