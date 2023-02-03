@@ -14,7 +14,8 @@ import { ServiceService } from 'src/app/Service/service.service';
   providers: [MessageService],
 })
 export class EditAnswerComponent implements OnInit {
-  @Input() answer: AnswerI = {
+  @Input() answerEdit: AnswerI = {
+    idAnswer:'',
     userId:'',
     questionId:'',
     answer:'',
@@ -35,9 +36,9 @@ export class EditAnswerComponent implements OnInit {
     this.modalService.open(content, { centered: true });
   }
 
-  editAnswer(): void {
+  editAnswer() {
 
-    this.services.editAnswer(this.answer).subscribe({
+    this.services.editAnswer(this.answerEdit).subscribe({
       next: (v) => {
         console.log(v)
         if(v){

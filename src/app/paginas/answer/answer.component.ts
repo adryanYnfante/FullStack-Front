@@ -35,6 +35,7 @@ export class AnswerComponent implements OnInit {
   ) {}
 
   answer: AnswerI = {
+    idAnswer:'',
     userId: '',
     questionId: '',
     answer: '',
