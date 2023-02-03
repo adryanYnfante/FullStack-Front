@@ -16,3 +16,6 @@
   .p-rating {
     color: #ff0707;
 }
+.page-link{
+  cursor: pointer;
+}
