@@ -17,7 +17,6 @@ import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistroComponent } from './persona/registro/registro.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AnswerComponent } from './paginas/answer/answer.component';
 import { QuestionComponent } from './paginas/question/question.component';
@@ -26,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component';
 
 
 
@@ -39,7 +39,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
+    EditComponent,
+    EditAnswerComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +54,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     HttpClientModule,
-    NgbModule,
     FormsModule,
     ToastModule,
     ToastrModule.forRoot(),

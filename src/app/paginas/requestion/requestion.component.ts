@@ -21,12 +21,11 @@ export class RequestionComponent implements OnInit {
 
   page: number = 0;
 
- 
+
   constructor(
     private route:ActivatedRoute,
     private questionService:QuestionService,
-    private service: QuestionService,
-
+    private service: QuestionService
     ) {
 
     }
@@ -64,8 +63,11 @@ export class RequestionComponent implements OnInit {
     this.currentAnswer+=10;
   }
 
+
+
   onScroll() {
 
   }
+
 
 }
