@@ -79,4 +79,8 @@ export class PreguntasComponent implements OnInit {
     });
   }
 
+  login(){
+    this.route.navigate(['login']);
+  }
+
 }

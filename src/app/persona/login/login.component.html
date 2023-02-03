@@ -33,13 +33,13 @@
                 </span>
 
 
-                <button [disabled]="form.invalid" (click)="ingresar()" pButton pRipple type="button" label="Iniciar" class="p-button-outlined p-button-secondary" style="margin-bottom: 10px;"></button>
+                <button [disabled]="form.invalid" (click)="ingresar()" pButton pRipple type="button" label="Iniciar" class="btn btn-dark" style="margin-bottom: 10px;"></button>
                 <div class="formGroup">
                   <span class="or"><span class="orInner">O</span></span>
                 </div>
 
                 <div class="formGroup">
-                  <button type="button" class="btn googleBtn" (click)="ingresarGoogle()">
+                  <button type="button" class="btn btn-primary" (click)="ingresarGoogle()">
                     <i class="fab fa-google-plus-g"></i>
                     Iniciar sesión con Google
                   </button>
@@ -47,7 +47,7 @@
 
                 <br>
                 <div class="recuperarContrasena">
-                  <button type="button" class="btn-primary" (click)="showModalDialog()">
+                  <button type="button" class="btn btn-danger" (click)="showModalDialog()">
                     <i class="fab fa-google-plus-g"></i>
                     Recuperar Contraseña
                   </button>
@@ -65,11 +65,6 @@
 
 
 </div>
-<div class="container2">
-    <button type="button" (click)="preguntasHome()" pButton pRipple label="Preguntas" class="p-button-danger mb-2"><i class="pi pi-user-edit" style="margin-top: 5px;"></i></button>
-</div>
-
-
 
 <p-dialog header="Recuperar Contraseña" [(visible)]="displayModal" [modal]="true" [style]="{width: '20vw'}"
     [draggable]="false" [resizable]="false">
@@ -83,7 +78,7 @@
             </div>
         </div>
         <div class="centrar">
-            <button [disabled]="form2.invalid" (click)="recuperarEmail()" pButton pRipple type="button" label="Enviar" class="p-button-outlined p-button-secondary" style="margin-top: 30px;"></button>
+            <button [disabled]="form2.invalid" (click)="recuperarEmail()" pButton pRipple type="button" label="Enviar" class="btn btn-danger" style="margin-top: 30px;"></button>
 
         </div>
     </form>

@@ -12,10 +12,10 @@
       pButton
       pRipple
       type="button"
-      disabled="true"
       label="Inicia Sesión Antes de Crear Preguntas"
       class="p-button-outlined p-button-danger"
-    ></button>
+      (click)="login()"
+      ></button>
   </div>
 </div>
 <div class="container" *ngIf="authService.userData as user">
