@@ -15,15 +15,16 @@ import { ServiceService } from 'src/app/Service/service.service';
 @Component({
   selector: 'app-edit-answer',
   templateUrl: './edit-answer.component.html',
-  styleUrls: ['./edit-answer.component.css']
+  styleUrls: ['./edit-answer.component.css'],
+  providers: [MessageService],
 })
 export class EditAnswerComponent implements OnInit {
 
-  @Input() answer2: AnswerI[] | undefined;
 
-  userLogged = this.authService.getUserLogged();
-  @Input() idanswer: any = '';
-  answers: AnswerI = {
+
+
+  @Input()answerEdit: AnswerI = {
+   id:"",
    userId:"",
    questionId:"",
    answer:"",
@@ -40,12 +41,6 @@ export class EditAnswerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getData();
-    this.getDatos();
-  }
-
-  getDatos() {
-    this.answers = this.idanswer;
   }
 
 
@@ -53,62 +48,21 @@ export class EditAnswerComponent implements OnInit {
     this.modalService.open(content, { centered: true });
   }
 
-  getData() {
-    this.userLogged.subscribe(value => {
-    })
-
-  }
-
-
-  editAnswers(answers: AnswerI): void {
-    answers.questionId = this.answers.questionId;
-    answers.userId = this.answers.userId;
-
-    this.services.editAnswer(answers).subscribe((v) => {
+  EditAnswer(){
+    this.services.editAnswer(this.answerEdit).subscribe({
+      next: (v) => {
+        console.log(v)
+        if(v){
+          this.modalService.dismissAll();
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Se ha agregado la respuesta',
+           })}},
 
     });
 
-    this.modalService.dismissAll();
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Se ha actualizado la respuesta',
-    });
-    setTimeout(() => {
-      window.location.reload();
-    }, 2000);
+
+
   }
 
-  saveAnswer(answers: AnswerI): void {
-    if (answers.answer) {
-      this.modalService.dismissAll();
-      this.services.saveAnswer(answers).subscribe({
-        next: (v) => {
-          if (v) {
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Se ha agregado la respuesta',
-
-            });
-            setTimeout(() => {
-              window.location.reload();
-            }, 2000);
-          } else {
-
-          }
-        },
-        error: (e) =>
-          this.toastr.error(e.mesaje, 'Fail', {
-            timeOut: 3000,
-          }),
-        complete: () => console.info('complete'),
-      });
-    } else {
-
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Rectifique los datos',
-        detail: '(Campos Vacios)-Intente de Nuevo',
-      });
-    }
-  }
 }

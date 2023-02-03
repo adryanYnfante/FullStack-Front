@@ -10,7 +10,7 @@ import { QuestionService } from 'src/app/Service/question.service';
   styleUrls: ['./requestion.component.css']
 })
 export class RequestionComponent implements OnInit {
- 
+
   question:QuestionI | undefined;
   answers: AnswerI[] | undefined | any[] ;
   answersNew: AnswerI[]| undefined | any[] ;
