@@ -1,0 +1,19 @@
+/* .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 60vh;
+} */
+
+.viewport
+{
+height: 350px;
+width: 400px;
+border: 1px dotted black;
+text-align: center;
+}
+
+.respuestas{
+  width: 400px;
+}
