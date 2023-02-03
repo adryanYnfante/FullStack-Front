@@ -40,8 +40,6 @@ export class EditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getData();
-    this.getDatos();
   }
 
   getDatos(){
@@ -75,7 +73,7 @@ export class EditComponent implements OnInit {
      });
     setTimeout(() => {
       window.location.reload();
-    }, 2000);
+    }, 1000);
   }
 
   saveQuestion(question: QuestionI): void {

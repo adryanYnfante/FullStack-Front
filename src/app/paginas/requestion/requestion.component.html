@@ -40,7 +40,7 @@
                 <p-rating [cancel]="false" [(ngModel)]="questions.position" [disabled]="true"></p-rating>
                 <!-- Botón para editar la respuesta -->
                 <div style="text-align: center; margin-left: 20px;">
-                  <app-edit-answer [idanswer]="question"></app-edit-answer>
+                  <app-edit-answer [answer]="questions"></app-edit-answer>
                   <!-- <app-edit [idanswer]="question"></app-edit> -->
                 </div>
                 <!-- Respuesta -->

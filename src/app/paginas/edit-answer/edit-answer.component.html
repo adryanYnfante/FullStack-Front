@@ -11,7 +11,8 @@
             <b>Editar tu respuesta</b>
           </div>
           <div class="card-body p-4">
-            <input id="type" class="form-control m-2 font2" type="text" placeholder="Tipo de pregunta" name="type" [(ngModel)]="question.answers" required value="idanswer.id"/>
+            <input id="type" class="form-control m-2 font2" type="text" placeholder="Respuesta" [(ngModel)]="answer.answer" name="type" required/>
+            <br>
             <!-- <input id="category" class="form-control m-2 font2" type="text" placeholder="Categorio de la Pregunta" name="category" [(ngModel)]="question.category" required /> -->
 
               <!-- <div class="form-floating font2" style="margin-top: 20px;">
@@ -21,7 +22,7 @@
 
                 <br>
               </div> -->
-              <button pButton (click)="editQuestion(question)" pRipple type="button" label="Actualizar Respuesta" class="p-button-outlined p-button-info"></button>
+              <button (click)="editAnswers(answer)"   pButton pRipple type="button" label="Actualizar Respuesta" class="p-button-outlined p-button-info"></button>
 
             <hr>
           </div>
@@ -34,4 +35,4 @@
     </div>
   </ng-template>
 
-  <button class="btn btn-outline-primary mb-2 me-2" (click)="openVerticallyCentered(content)" *ngIf="authService.userData">Edit</button>
+  <button class="btn btn-outline-primary mb-2 me-2" (click)="openVerticallyCentered(content)" >Edit</button>

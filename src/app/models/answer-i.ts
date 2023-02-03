@@ -1,6 +1,7 @@
 export interface AnswerI {
-   userId:string;
-   questionId:string;
-   answer:string;
-   position:number;
+  id: string;
+  userId: string;
+  questionId: string;
+  answer: string;
+  position: number;
 }

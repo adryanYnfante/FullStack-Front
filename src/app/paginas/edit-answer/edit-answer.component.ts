@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
@@ -16,53 +17,34 @@ import { ServiceService } from 'src/app/Service/service.service';
   providers: [MessageService],
 })
 export class EditAnswerComponent implements OnInit {
-  @Input() question2: QuestionI[] | undefined;
-  userLogged = this.authService.getUserLogged();
-  answers: AnswerI[] | undefined;
-  @Input() idanswer: any = "";
-  question: any = {
+
+  @Input() answer: AnswerI={
     id: '',
-    userId: '',
-    question: '',
-    type: '',
-    category: '',
-    answers: [],
-    start: '2'
+    userId:'',
+    questionId:'',
+    answer:'',
+    position:0
   };
+
   constructor(
     private modalService: NgbModal,
-    public authService: ServiceService,
+    private messageService: MessageService,
     private services: QuestionService,
-    private toastr: ToastrService,
-    private route: Router,
-    private messageService: MessageService
   ) { }
 
-
   ngOnInit(): void {
-    this.getData();
-    this.getDatos();
-  }
 
-  getDatos() {
-    this.question = this.idanswer;
   }
-
 
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
   }
 
-  getData() {
-    this.userLogged.subscribe(value => {
-    })
-  }
+  editAnswers(answers: AnswerI): void {
+    answers.questionId = this.answer.questionId;
+    answers.userId = this.answer.userId;
 
-  editQuestion(question: QuestionI): void {
-    question.id = this.idanswer.id;
-    question.userId = this.idanswer.userId;
-
-    this.services.editQuestion(question).subscribe((v) => {
+    this.services.editAnswer(answers).subscribe((v) => {
 
     });
 
@@ -76,37 +58,232 @@ export class EditAnswerComponent implements OnInit {
     }, 2000);
   }
 
-  saveQuestion(question: QuestionI): void {
-    if (question.type && question.category) {
-      this.modalService.dismissAll();
-      this.services.saveQuestion(question).subscribe({
-        next: (v) => {
-          if (v) {
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Se ha agregado la pregunta',
 
-            });
-            setTimeout(() => {
-              window.location.reload();
-            }, 2000);
-          } else {
 
-          }
-        },
-        error: (e) =>
-          this.toastr.error(e.mesaje, 'Fail', {
-            timeOut: 3000,
-          }),
-        complete: () => console.info('complete'),
-      });
-    } else {
 
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Rectifique los datos',
-        detail: '(Campos Vacios)-Intente de Nuevo',
-      });
-    }
+
+
+  saveAnswer(): void {
+    this.answer.questionId = this.answer.questionId;
+    this.services.editAnswer(this.answer).subscribe({
+
+      next: (v) => {
+        console.log(v)
+        if(v){
+          this.modalService.dismissAll();
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Se ha agregado la respuesta',
+
+           });
+        //    setTimeout(() => {
+        //    window.location.reload();
+        //  }, 1000);
+        }
+      },
+      error: (e) =>
+      {
+        console.log(e)
+        if(e.status == 200){
+          this.modalService.dismissAll();
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Respuesta editada correctamente',
+
+           });
+        //    setTimeout(() => {
+        //    window.location.reload();
+        //  }, 1000);
+        }
+      //   this.modalService.dismissAll();
+      //   this.messageService.add({
+      //   severity: 'error',
+      //   summary: 'Rectifique los datos',
+      //   detail: '(Campos Vacios)-Intente de Nuevo',
+      // })
+    },
+      complete: () => console.info('complete'),
+    });
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   userLogged = this.authService.getUserLogged();
+//   question:QuestionI | undefined;
+//   answers: AnswerI[] | undefined;
+
+//   @Input() item: any;
+//   constructor(
+//     private route:ActivatedRoute,
+//     private modalService: NgbModal,
+//     private services: QuestionService,
+//     private toastr: ToastrService,
+//     private router: Router,
+//     private formBuilder: FormBuilder,
+//     private messageService: MessageService,
+//     public authService: ServiceService
+//   ) {}
+//   @Input() idanswer: any ='';
+//   @Input() answer: AnswerI = {
+//     id: '',
+//     userId: '',
+//     questionId: '',
+//     answer: '',
+//     position: 0,
+//   };
+
+//   ngOnInit(): void {
+//     const id = this.route.snapshot.paramMap.get('id');
+//     this.getQuestions(`${id}`);
+//     this.get2();
+//   }
+
+//   get2(){
+//     let id = this.route.snapshot.paramMap.get('id');
+//     this.services.getAnswer(id).subscribe((data) => {
+//           this.answers = data.answers;
+//     });
+//   }
+
+//   // getDatos(){
+//   //   let id = this.route.snapshot.paramMap.get('id');
+//   //   this.services.getAnswer(id)
+//   // }
+
+
+
+//   getQuestions(id:string):void{
+//     this.services.getQuestion(id).subscribe(data=>{
+//       this.question=data;
+//       this.answers = data.answers;
+//     })
+
+//  }
+
+  // getData(){
+  //   this.userLogged.subscribe(value=>{
+  //   })
+
+  // }
+
+  // openVerticallyCentered(content: any) {
+  //   this.modalService.open(content, { centered: true });
+  // }
+
+
+
+
+  // editAnswer(answer: AnswerI): void{
+  //   answer.id = this.idanswer.id;
+
+  //   this.services.editAnswer(answer).subscribe((v)=>{
+
+  //   });
+
+  //   this.modalService.dismissAll();
+  //   this.messageService.add({
+  //     severity: 'success',
+  //     summary: 'Se ha actualizado la pregunta',
+  //    });
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 2000);
+
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+  // saveAnswer(): void {
+  //   console.log(this.answer);
+  //   this.answer.userId = this.answer.userId;
+  //   console.log(this.item.userId);
+  //   this.answer.questionId = this.item.id;
+  //   this.services.editAnswer(this.answer).subscribe({
+  //     next: (v) => {
+  //       if(v){
+  //         this.modalService.dismissAll();
+  //         this.messageService.add({
+  //           severity: 'success',
+  //           summary: 'Se ha agregado la respuesta',
+
+  //          });
+  //          setTimeout(() => {
+  //          window.location.reload();
+  //        }, 1000);
+  //       }
+  //     },
+  //     error: (e) =>{
+  //       console.log(e);
+  //     }
+
+      // this.messageService.add({
+      //   severity: 'error',
+      //   summary: 'Rectifique los datos',
+      //   detail: '(Campos Vacios)-Intente de Nuevo',
+
+      // }
+      // )
+//       ,
+//       complete: () => console.info('complete'),
+//     });
+//   }
+// }
