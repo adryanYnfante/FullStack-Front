@@ -25,3 +25,8 @@ Ejecute `ng e2e` para ejecutar las pruebas de extremo a extremo a través de una
 ## Further help
 
 Para obtener más ayuda sobre Angular CLI, use `ng help` o consulte la página [Descripción general y referencia de comandos de Angular CLI] (https://angular.io/cli).
+
+- Desarrollador del proyecto
+
+Martha Liliana Gallego Murillo
+correo: lilianagallegom@gmail.com
