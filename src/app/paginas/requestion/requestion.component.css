@@ -6,7 +6,8 @@
     height: 60vh;
 }*/
 
-.example-viewport {
-  height: 100%;
+cdk-virtual-scroll-viewport {
+  height: 300px;
+  /* width: 100%; */
 }
 
