@@ -13,7 +13,7 @@ export class QuestionService {
   }
 
 
-  private url: string = 'http://localhost:8080/';
+  private url: string = 'http://localhost:9090/';
 
 
   constructor(private http: HttpClient) {}
@@ -55,8 +55,15 @@ export class QuestionService {
     return this.http.post<any>(direction, answer);
   }
 
+  editAnswer(answer: AnswerI):Observable<any> {
+    let direction = this.url + 'answer-update';
+    return this.http.put<any>(direction, answer);
+  }
+
   editQuestion(question: QuestionI): Observable<any> {
     let direction = this.url + 'update';
-    return this.http.post<any>(direction, question);
+    return this.http.put<any>(direction, question);
   }
+
+
 }

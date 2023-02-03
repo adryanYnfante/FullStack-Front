@@ -12,13 +12,14 @@ export class PreguntasComponent implements OnInit {
   userLogged = this.authService.getUserLogged();
   uid: any;
 
-  totalQuestions: number = 0;
+
 
   questions: QuestionI[] | undefined;
   user: any = '';
   page: number = 0;
   pages: Array<number> | undefined;
   disabled: boolean = false;
+  totalQuestions : number = 0 ;
 
   constructor(
     private service: QuestionService,
@@ -56,10 +57,14 @@ export class PreguntasComponent implements OnInit {
 
   previousPage(): void {
     !this.isFirst() ? (this.page--, this.getQuestions()) : false;
+
   }
 
   nextPage(): void {
+    console.log('Next');
     !this.isLast() ? (this.page++, this.getQuestions()) : false;
+    console.log(this.page);
+    console.log(this.totalQuestions)
   }
 
   getPage(page: number): void {
@@ -68,11 +73,11 @@ export class PreguntasComponent implements OnInit {
   }
 
   traerdatos() {
-    this.userLogged.subscribe((value) => {     
+    this.userLogged.subscribe((value) => {
       if (value?.email == undefined) {
-        this.disabled = true;       
+        this.disabled = true;
       } else {
-        this.disabled = false;     
+        this.disabled = false;
       }
     });
   }
