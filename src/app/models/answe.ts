@@ -1,5 +1,5 @@
 export interface answe {
-    id:string;
+     id:string;
      userId:string;
      question:string;
      type:string;
@@ -7,4 +7,3 @@ export interface answe {
      answers:[any];
      start:string;
  }
- 

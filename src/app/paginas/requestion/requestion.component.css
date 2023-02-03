@@ -5,3 +5,10 @@
     width: 100vw;
     height: 60vh;
 } */
+
+.viewport {
+  height: 400px;
+  width: 400px;
+  /* border: 1px dotted black; */
+  text-align: center;
+}

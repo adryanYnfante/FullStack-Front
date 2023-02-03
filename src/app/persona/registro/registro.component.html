@@ -1,8 +1,9 @@
 <p-toast></p-toast>
 <app-navbar></app-navbar>
+<br><br><br>
 <div style="text-align: right"></div>
 <div class="container">
-  <div class="card text-center">
+  <div class="card text-center" style="height: 420px;">
     <div class="card-header">
       <B>REGISTRO</B>
       <i class="pi pi-user" style="font-size: 1rem; margin-left: 10px"></i>
@@ -29,7 +30,8 @@
         </span>
 
         <span class="p-float-label" style="margin: 20px; margin-top: 30px">
-          <p-password formControlName="password">
+          <p-password formControlName="password" placeholder="Contraseña">
+
             <ng-template pTemplate="header">
               <h6>Elige una contraseña</h6>
             </ng-template>
@@ -55,14 +57,22 @@
           class="p-button-raised p-button-success"
           style="margin-bottom: 10px"
         ></button>
+        <br>
+        <button
+          (click)="ingresarGoogle()"
+          pButton
+          pRipple
+          type="button"
+          label="Ingresar con Google"
+          class="p-button-raised p-button-success"
+        ></button>
         <br />
       </form>
     </div>
-
-    <div></div>
+    <!-- <div></div> -->
   </div>
 </div>
-<div class="container2">
+<!-- <div class="container2">
   <button
     type="button"
     (click)="preguntasHome()"
@@ -71,6 +81,6 @@
     label="Preguntas"
     class="p-button-danger mb-2"
   >
-    <i class="pi pi-user-edit" style="margin-right: 5px"></i>
+    <i class="pi pi-user-edit" style="margin-right: 5px;"></i>
   </button>
-</div>
+</div> -->
