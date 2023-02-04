@@ -4,7 +4,6 @@
     gap: 1px 10px;
     align-items: center;
   }
-  
   .summary-questions{
     height: 130px;
     display: grid;
@@ -12,7 +11,12 @@
     align-items: flex-end;
     gap: 1px 1px;
   }
-  
+
   .p-rating {
     color: #ff0707;
 }
+
+#sinLogin{
+  background-image: url('https://img.freepik.com/vector-gratis/seccion-preguntas-frecuentes-sitio-web-mesa-ayuda-al-usuario-soporte-al-cliente-preguntas-frecuentes-solucion-problemas-juego-preguntas-personaje-dibujos-animados-hombre-confundido_335657-1602.jpg');
+}
+

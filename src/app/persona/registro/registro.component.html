@@ -33,17 +33,19 @@
             <ng-template pTemplate="header">
               <h6>Elige una contraseña</h6>
             </ng-template>
-            <ng-template pTemplate="footer">
-              <p-divider></p-divider>
-              <p class="mt-2">Sugerencias</p>
-              <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
-                <li>Al menos una minúscula</li>
-                <li>Al menos una mayúscula</li>
-                <li>Al menos un numérico</li>
-                <li>Mínimo 8 caracteres</li>
-              </ul>
-            </ng-template>
           </p-password>
+          <ng-template pTemplate="footer">
+            <p-divider></p-divider>
+            <p class="mt-2">Sugerencias</p>
+            <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+              <li>Al menos una minúscula</li>
+              <li>Al menos una mayúscula</li>
+              <li>Al menos un numérico</li>
+              <li>Mínimo 8 caracteres</li>
+            </ul>
+            <br><br><br>
+          </ng-template>
+
         </span>
         <button
           [disabled]="form.invalid"
@@ -61,16 +63,4 @@
 
     <div></div>
   </div>
-</div>
-<div class="container2">
-  <button
-    type="button"
-    (click)="preguntasHome()"
-    pButton
-    pRipple
-    label="Preguntas"
-    class="p-button-danger mb-2"
-  >
-    <i class="pi pi-user-edit" style="margin-right: 5px"></i>
-  </button>
 </div>
