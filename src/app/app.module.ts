@@ -21,8 +21,8 @@ import { ToastModule } from 'primeng/toast';
 import { ToastrModule } from 'ngx-toastr';
 import { RequestionComponent } from './paginas/requestion/requestion.component';
 import { EditComponent } from './paginas/edit/edit.component';
-
-
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { EditAnswerComponent } from './paginas/edit-answer/edit-answer.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +30,12 @@ import { EditComponent } from './paginas/edit/edit.component';
     LoginComponent,
     PreguntasComponent,
     NavbarComponent,
-    RegistroComponent, 
+    RegistroComponent,
     AnswerComponent,
     QuestionComponent,
     RequestionComponent,
-    EditComponent
-       
+    EditComponent,
+    EditAnswerComponent
   ],
   imports: [
     BrowserModule,
@@ -47,10 +47,8 @@ import { EditComponent } from './paginas/edit/edit.component';
     HttpClientModule,
     NgbModule,
     FormsModule,
-    ToastrModule.forRoot()
-    
-   
-    
+    ToastrModule.forRoot(),
+    ScrollingModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

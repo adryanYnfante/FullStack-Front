@@ -1,20 +1,31 @@
 .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 60vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 60vh;
 }
 
 .container2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  background-color: #1F618D;
 }
 
 .centrar{
-    text-align: center;
+  text-align: center;
+  color: blue;
+}
+
+.p-button-outlined{
+  color: blue;
+}
+
+form{
+
 }
 

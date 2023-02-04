@@ -8,12 +8,15 @@ import { PreguntasComponent } from './persona/preguntas/preguntas.component';
 import { RegistroComponent } from './persona/registro/registro.component';
 
 const routes: Routes = [
+
+  {path: '', pathMatch: 'full', redirectTo:'login'},
   { path: 'login', component: LoginComponent},
   { path: 'preguntas', component: PreguntasComponent},
   { path: 'registro', component: RegistroComponent},
   { path: 'answer', component: AnswerComponent},
   {path: 'question/:id', component: RequestionComponent},
-  {path: '**', pathMatch: 'full', redirectTo:'preguntas'}
+
+  {path: '**', pathMatch: 'full', redirectTo:'login'}
 ];
 
 @NgModule({

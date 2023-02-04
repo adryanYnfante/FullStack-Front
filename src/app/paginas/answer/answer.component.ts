@@ -15,8 +15,6 @@ import { ServiceService } from 'src/app/Service/service.service';
   providers: [MessageService],
 })
 export class AnswerComponent implements OnInit {
-
-  
   public form: FormGroup = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(10)]],
@@ -35,6 +33,8 @@ export class AnswerComponent implements OnInit {
   ) {}
 
   answer: AnswerI = {
+
+    id:'',
     userId: '',
     questionId: '',
     answer: '',
@@ -57,12 +57,12 @@ export class AnswerComponent implements OnInit {
           this.messageService.add({
             severity: 'success',
             summary: 'Se ha agregado la respuesta',
-            
            });
            setTimeout(() => {
            window.location.reload();
          }, 1000);
-        }        
+
+        }
       },
       error: (e) =>
       this.messageService.add({
@@ -72,5 +72,9 @@ export class AnswerComponent implements OnInit {
       }),
       complete: () => console.info('complete'),
     });
+  }
+
+  login(){
+    this.route.navigate(['']);
   }
 }
